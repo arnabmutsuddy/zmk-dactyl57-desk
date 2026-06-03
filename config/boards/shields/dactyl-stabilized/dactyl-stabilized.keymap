@@ -18,15 +18,15 @@
  // |  ESC  |  !  |  @  |   #  |   $   |   %   |   ^   |  |   &   |   *   |  (    |  )    |  -   |   +   |   `   |
  // |  TAB  |  Q  |  W  |   E  |   R   |   T   |   [   |  |   ]   |   Y   |  U    |  I    |  O   |   P   |   \   |
  // | SHIFT |  A  |  S  |   D  |   F   |   G   |   (   |  |   )   |   H   |  J    |  K    |  L   |   ;   |   '   |
- // |  CTRL |  Z  |  X  |   C  |   V   |   B   |       |  |       |   N   |  M    |  ,    |  .   |   /   | ENTER |
- //         | XXX | ALT |  GUI | SPACE | RAISE | LSHFT |  | RAISE | LOWER | ENTER | BSPC  | UNDO |   DO  |
+ // |  CTRL |  Z  |  X  |   C  |   V   |   B   | CTRL  |  | CTRL  |   N   |  M    |  ,    |  .   |   /   | ENTER |
+ // | CTRL  | XXX | ALT |  GUI | SPACE | RAISE | LSHFT |  | RAISE | LOWER | ENTER | BSPC  | UNDO |   DO  | CTRL  |
  //
              bindings = <
  &kp ESC    &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PRCNT &kp CARET          &kp AMPS    &kp ASTRK &kp LPAR  &kp RPAR  &kp MINUS   &kp EQUAL   &kp GRAVE
  &kp TAB    &kp Q    &kp W    &kp E    &kp R      &kp T     &kp LBKT           &kp RBKT    &kp Y     &kp U     &kp I     &kp O       &kp P       &kp BSLH
  &kp LSHFT  &kp A    &kp S    &kp D    &kp F      &kp G     &kp LPAR           &kp RPAR    &kp H     &kp J     &kp K     &kp L       &kp SEMI    &kp SQT
- &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B                                    &kp N     &kp M     &kp COMMA &kp DOT     &kp FSLH    &kp ENTER
-            &none    &kp LALT &kp LGUI &kp SPACE  &mo 1     &kp LSHFT                      &mo 2     &mo 1     &kp ENTER &kp BSPC    &kp LG(Z)   &kp LG(LS(Z))
+ &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B     &kp LCTRL          &kp LCTRL   &kp N     &kp M     &kp COMMA &kp DOT     &kp FSLH    &kp ENTER
+ &kp LCTRL  &none    &kp LALT &kp LGUI &kp SPACE  &mo 1     &kp LSHFT          &mo 2       &mo 1     &kp ENTER &kp BSPC  &kp LG(Z)   &kp LG(LS(Z)) &kp LCTRL
              >;
  
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -38,13 +38,13 @@
  // |       |     |     |      |      |      |        |  |       |      |   7   |   8   |   9   |       |       |       |
  // |       |     |     |      |      |      |        |  |       |      |   4   |   5   |   6   |   *   |       |       |
  // |       |     |     |      |      |      |        |  |       |      |   1   |   2   |   3   |   /   |       |       |
- //               |     |      |      |      |        |  |       |      |       |       |       |   0   |   .   |       |
+ //         |     |     |      |      |      |        |  |       |      |       |       |       |   0   |   .   |       |
              bindings = <
  &trans    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6          &kp F7   &kp F8     &kp F9    &kp F10   &kp F11   &kp F12         &trans
  &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9 &trans          &trans
  &kp CAPS  &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans
- &trans    &trans    &trans    &trans    &trans    &trans                              &trans    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE   &trans
-           &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &kp KP_N0 &kp KP_DOT
+ &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE   &trans
+ &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &kp KP_N0 &kp KP_DOT      &trans
              >;
          };
  
@@ -54,13 +54,13 @@
  // |       |     |     |      |      |      |        |  |       |      |   ^   |       |      |       |       |
  // |       |     |     |      |      |      |        |  |       |  <   |   v   |   >   |      |       |       |
  // |       |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
- //               |     |      |      |      |        |  |       |      |       |       |      |       |       |
+ //         |     |     |      |      |      |        |  |       |      |       |       |      |       |       |
              bindings = <
  &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp F6          &kp F7   &kp F8     &kp F9    &kp F10  &kp F11   &kp F12   &trans
  &out OUT_TOG &trans       &trans       &trans       &trans       &trans       &trans          &trans    &trans    &kp HOME  &kp UP   &kp END   &trans    &trans
  &trans       &trans       &trans       &trans       &trans       &trans       &trans          &trans    &trans    &kp LEFT  &kp DOWN &kp RIGHT &trans    &trans
- &trans       &trans       &trans       &trans       &trans       &trans                                 &trans    &trans    &trans    &trans    &trans    &trans
-              &trans       &trans       &trans       &trans       &trans       &trans          &trans    &trans    &trans    &trans    &trans    &trans
+ &trans       &trans       &trans       &trans       &trans       &trans       &trans          &trans    &trans    &trans    &trans   &trans    &trans    &trans
+ &trans       &trans       &trans       &trans       &trans       &trans       &trans          &trans    &trans    &trans    &trans   &trans    &trans    &trans
              >;
          };
      };
